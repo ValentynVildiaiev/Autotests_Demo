@@ -1,4 +1,5 @@
-import requests
+import requests,time
+
 
 session = requests.session()
 base_url = "https://congenial-pancake-q7qx9g7qwqp5c4q66-8000.app.github.dev"
@@ -42,6 +43,7 @@ for _ in range(100):
         break
 
 print("DELETE request limit check")
+time.sleep(60) # Just in case limits change, explicit wait won't help in this case
 for _ in range(100):
     post_request = session.post(f"{base_url}/api/gigs", json=data)
     print(post_request.json())
