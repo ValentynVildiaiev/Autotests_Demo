@@ -7,7 +7,7 @@ async def main():
         browser = await p.firefox.launch(headless=False)
         page = await browser.new_page()
         await page.goto("https://whatmyuseragent.com/")
-        await page.screenshot(path="asyncdemo.png")
+        await page.screenshot(path="async_demo.png")
         print(await page.title())
         await browser.close()
 
